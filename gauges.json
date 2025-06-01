@@ -595,5 +595,11 @@
         }
       ]
     }
+  },
+  {
+    "address": "0xC8fca7af7bb47b108117572419980298CB28E073",
+    "metadata": {
+      "name": "Bitcoin hitpoint by TWS"
+    }
   }
 ]
