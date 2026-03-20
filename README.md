@@ -1,5 +1,3 @@
-![image](https://github.com/user-attachments/assets/1661d099-681b-4fef-ba53-31a184a688c9)
-
 # ve-fetch
 
 Fetch gauge votes for certain contracts:
