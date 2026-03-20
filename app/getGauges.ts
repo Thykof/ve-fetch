@@ -9,6 +9,7 @@ export async function getGauges(
   client: any,
   skipFetch: boolean,
   voterAddress: Address,
+  blockNumber?: number,
 ) {
   try {
     // Define the path for 'gauges.json'
@@ -25,6 +26,7 @@ export async function getGauges(
       address: voterAddress,
       abi,
       functionName: "getAllGauges",
+      blockNumber,
     })) as Address[];
 
     // Fetch gauge data and metadata sequentially
@@ -38,6 +40,7 @@ export async function getGauges(
         abi: abi,
         functionName: "gauges",
         args: [gaugeAddress],
+        blockNumber,
       })) as [number, string, string];
 
       // Extract the IPFS URI (adjust the index based on your actual data structure)

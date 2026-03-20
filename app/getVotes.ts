@@ -3,7 +3,11 @@ import path from "path";
 import type { GaugeInfo, GaugeVoteInfo, GaugeVotesBlob } from "./types";
 import { abi } from "..";
 
-export async function getVotes(client: any, voterContract: string) {
+export async function getVotes(
+  client: any,
+  voterContract: string,
+  blockNumber?: number,
+) {
   try {
     // Define the path for 'gauges.json'
     const gaugesFilePath = path.join(process.cwd(), "gauges.json");
@@ -30,6 +34,7 @@ export async function getVotes(client: any, voterContract: string) {
         abi: abi,
         functionName: "gaugeVotes",
         args: [gaugeAddress],
+        blockNumber,
       })) as bigint;
 
       return {

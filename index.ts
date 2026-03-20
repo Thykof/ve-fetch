@@ -20,7 +20,9 @@ export const abi = SimpleGaugeVoterABI;
 const args = process.argv.slice(2);
 const skipFetch = args.includes("--skip");
 
-await getGauges(client, skipFetch, modeVoterAddress);
-await getVotes(client, modeVoterAddress);
-await getVotes(client, bptVoterAddress);
+const blockNumber = undefined;
+
+await getGauges(client, skipFetch, modeVoterAddress, blockNumber);
+await getVotes(client, modeVoterAddress, blockNumber);
+await getVotes(client, bptVoterAddress, blockNumber);
 aggreagateVotes([modeVoterAddress, bptVoterAddress]);
